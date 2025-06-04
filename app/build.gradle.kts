@@ -63,4 +63,8 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // OkHttp (HTTP 요청 전송용)
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+
 }

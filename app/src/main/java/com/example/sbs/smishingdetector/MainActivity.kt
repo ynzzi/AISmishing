@@ -1,12 +1,18 @@
 package com.example.smishingdetector
 
+import android.Manifest
 import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
+import android.provider.Telephony
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.navigation.compose.*
 import com.example.smishingdetector.ui.*
 import com.example.smishingdetector.ui.theme.SmishingDetectorTheme
@@ -29,7 +35,6 @@ fun SmishingDetectorApp() {
     val isPermissionShown = prefs.getBoolean("PermissionScreenShown", false)
     val isLoggedIn = prefs.getBoolean("isLoggedIn", false)
 
-    // 시작 화면 결정
     val startDestination = when {
         !isLoggedIn -> "welcome"
         !isPermissionShown -> "permission"
@@ -38,7 +43,6 @@ fun SmishingDetectorApp() {
 
     SmishingDetectorTheme {
         NavHost(navController = navController, startDestination = startDestination) {
-
             // 🟡 웰컴 화면 (가입하기 / 로그인 선택)
             composable("welcome") {
                 WelcomeScreen(navController)
@@ -68,8 +72,6 @@ fun SmishingDetectorApp() {
             composable("main") {
                 MainScreen(navController, prefs)
             }
-
-
         }
     }
 }

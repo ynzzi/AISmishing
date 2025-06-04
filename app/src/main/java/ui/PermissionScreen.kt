@@ -69,7 +69,7 @@ fun PermissionScreen(navController: NavController, prefs: SharedPreferences) {
         Button(
             onClick = {
                 prefs.edit().putBoolean("PermissionScreenShown", true).apply()
-                navController.navigate("main") {
+                navController.navigate("sms_permission") {
                     popUpTo("permission") { inclusive = true }
                 }
             },
