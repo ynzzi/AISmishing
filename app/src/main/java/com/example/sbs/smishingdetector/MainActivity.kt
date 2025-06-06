@@ -72,6 +72,11 @@ fun SmishingDetectorApp() {
             composable("main") {
                 MainScreen(navController, prefs)
             }
+
+            // 🧾 신고내역 및 스미싱 목록 화면 (🚨 새로 추가된 부분)
+            composable("report") {
+                ReportScreen(navController)
+            }
         }
     }
 }
