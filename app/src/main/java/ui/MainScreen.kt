@@ -3,6 +3,7 @@ package com.example.smishingdetector.ui
 import android.content.SharedPreferences
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.*
@@ -13,9 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.foundation.shape.CircleShape
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 
@@ -31,6 +30,17 @@ fun MainScreen(navController: NavController, prefs: SharedPreferences) {
             ModalDrawerSheet {
                 Text("메뉴", modifier = Modifier.padding(16.dp))
                 Divider()
+
+                // ✅ 신고내역으로 이동
+                TextButton(onClick = {
+                    navController.navigate("report")
+                }) {
+                    Text("신고내역 및 스미싱 목록", color = Color.Black)
+                }
+
+                Divider()
+
+                // ✅ 로그아웃
                 TextButton(onClick = {
                     prefs.edit().clear().apply()
                     navController.navigate("welcome") {
@@ -78,7 +88,10 @@ fun MainScreen(navController: NavController, prefs: SharedPreferences) {
                 Spacer(modifier = Modifier.height(48.dp))
                 Text("스미싱 목록", fontSize = 16.sp, color = Color.Black)
                 Spacer(modifier = Modifier.height(12.dp))
-                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
                     StatCard("악성앱", "1 건")
                     StatCard("피싱전화", "7 건")
                     StatCard("스미싱", "5 건")
@@ -100,7 +113,12 @@ fun CircularStatusBox() {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text("피싱 검사", color = Color(0xFF5A4FCF), fontSize = 20.sp)
             Spacer(modifier = Modifier.height(8.dp))
-            Text("등록된 기기에서\n검사를 진행중입니다.", fontSize = 12.sp, color = Color.Gray, textAlign = TextAlign.Center)
+            Text(
+                "등록된 기기에서\n검사를 진행중입니다.",
+                fontSize = 12.sp,
+                color = Color.Gray,
+                textAlign = TextAlign.Center
+            )
         }
     }
 }
