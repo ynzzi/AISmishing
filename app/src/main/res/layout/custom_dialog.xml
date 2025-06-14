@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:gravity="center_horizontal"> <!-- 전체 중앙 정렬 -->
+
+    <!-- "알림" 텍스트 -->
+    <TextView
+        android:text="알림"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:paddingTop="12dp"
+        android:paddingBottom="8dp" />
+
+    <!-- 🔽 아이콘 + 문구를 한 줄로 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="8dp">
+
+        <FrameLayout
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/circle_purple"
+            android:gravity="center"
+            android:layout_marginEnd="12dp">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@android:drawable/ic_dialog_alert"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
+
+        <TextView
+            android:text="스미싱 의심 메시지가 수신되었습니다."
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- 기존 메시지 -->
+    <TextView
+        android:id="@+id/messageText"
+        android:textSize="14sp"
+        android:textColor="#444444"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+
+    <!-- 버튼 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/reportButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="신고"
+            android:backgroundTint="#4841AE"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="12dp"/>
+
+        <Button
+            android:id="@+id/ignoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="무시"
+            android:textColor="#4841AE"
+            android:background="@drawable/outlined_button"/>
+    </LinearLayout>
+</LinearLayout>
