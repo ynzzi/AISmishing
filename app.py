@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 from transformers import AutoTokenizer, AutoModel
 import torch
+from transformers import AutoModelForSequenceClassification
 
 app = Flask(__name__)
-tokenizer = AutoTokenizer.from_pretrained("monologg/ko-minilm")
-model = AutoModel.from_pretrained("monologg/ko-minilm")
+tokenizer = AutoTokenizer.from_pretrained("BM-K/KoMiniLM", use_auth_token=False)
+model = AutoModelForSequenceClassification.from_pretrained("BM-K/KoMiniLM", use_auth_token=False)
 
 @app.route("/")
 def index():
