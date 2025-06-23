@@ -1,0 +1,64 @@
+# main.py
+from fastapi import FastAPI, Form
+from fastapi.middleware.cors import CORSMiddleware
+from db_loader import load_dataset
+from model import classify_sms
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+texts, labels, tfidf_vectorizer, tfidf_matrix = [], [], None, None
+
+# main.py
+from fastapi import FastAPI, Form
+from fastapi.middleware.cors import CORSMiddleware
+from db_loader import load_dataset
+from model import classify_sms
+
+# main.py
+from fastapi import FastAPI, Form
+from fastapi.middleware.cors import CORSMiddleware
+from db_loader import load_dataset
+from model import classify_sms
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+texts, labels, tfidf_vectorizer, tfidf_matrix = [], [], None, None
+
+@app.on_event("startup")
+def startup_event():
+    global texts, labels, tfidf_vectorizer, tfidf_matrix
+    print("🚀 서버 시작 - 데이터셋 로드 중")
+    texts, labels, tfidf_vectorizer, tfidf_matrix = load_dataset(limit=10000)
+    print("✅ 로딩 완료")
+
+@app.post("/sms")
+def check_sms(sender: str = Form(...), message: str = Form(...)):
+    print(f"📩 수신된 메시지\n- 발신자: {sender}\n- 내용: {message}")
+
+    result = classify_sms(
+        message=message,
+        texts=texts,
+        labels=labels,
+        tfidf_vectorizer=tfidf_vectorizer,
+        tfidf_matrix=tfidf_matrix
+    )
+
+    return {
+        "sender": sender,
+        "message": message,
+        **result
+    }
