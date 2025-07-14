@@ -4,7 +4,7 @@
             "outputFile": "com.example.smishingdetector.app-mergeDebugResources-65:/values-ky/values-ky.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\f11a7a2dfc998ec016db27aaa3914b46\\transformed\\material3-release\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\f11a7a2dfc998ec016db27aaa3914b46\\transformed\\material3-release\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\13664abbd2a0801667295388500744a0\\transformed\\foundation-release\\res\\values-ky\\values-ky.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,154",
-                        "endColumns": "98,103",
-                        "endOffsets": "149,253"
-                    },
-                    "to": {
-                        "startLines": "185,186",
-                        "startColumns": "4,4",
-                        "startOffsets": "17448,17547",
-                        "endColumns": "98,103",
-                        "endOffsets": "17542,17646"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\afd77036b07c42891bfbbf52a912652f\\transformed\\appcompat-1.6.1\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\afd77036b07c42891bfbbf52a912652f\\transformed\\appcompat-1.6.1\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,24 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\65521d5f343b1f7bc6a303101c338b4b\\transformed\\core-1.16.0\\res\\values-ky\\values-ky.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,155,257,360,467,569,673,784",
-                        "endColumns": "99,101,102,106,101,103,110,100",
-                        "endOffsets": "150,252,355,462,564,668,779,880"
-                    },
-                    "to": {
-                        "startLines": "38,39,40,41,42,43,44,181",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "3505,3605,3707,3810,3917,4019,4123,17082",
-                        "endColumns": "99,101,102,106,101,103,110,100",
-                        "endOffsets": "3600,3702,3805,3912,4014,4118,4229,17178"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\0a87f52ec8c30309e5924e0d629e461e\\transformed\\material-1.11.0\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\0a87f52ec8c30309e5924e0d629e461e\\transformed\\material-1.11.0\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +57,41 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\user\\.gradle\\caches\\8.11.1\\transforms\\b9f927cfeaf13570db47c27e0f41b519\\transformed\\ui-release\\res\\values-ky\\values-ky.xml",
+                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\13664abbd2a0801667295388500744a0\\transformed\\foundation-release\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,154",
+                        "endColumns": "98,103",
+                        "endOffsets": "149,253"
+                    },
+                    "to": {
+                        "startLines": "185,186",
+                        "startColumns": "4,4",
+                        "startOffsets": "17448,17547",
+                        "endColumns": "98,103",
+                        "endOffsets": "17542,17646"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\65521d5f343b1f7bc6a303101c338b4b\\transformed\\core-1.16.0\\res\\values-ky\\values-ky.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,155,257,360,467,569,673,784",
+                        "endColumns": "99,101,102,106,101,103,110,100",
+                        "endOffsets": "150,252,355,462,564,668,779,880"
+                    },
+                    "to": {
+                        "startLines": "38,39,40,41,42,43,44,181",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "3505,3605,3707,3810,3917,4019,4123,17082",
+                        "endColumns": "99,101,102,106,101,103,110,100",
+                        "endOffsets": "3600,3702,3805,3912,4014,4118,4229,17178"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\b9f927cfeaf13570db47c27e0f41b519\\transformed\\ui-release\\res\\values-ky\\values-ky.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

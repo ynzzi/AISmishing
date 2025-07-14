@@ -35,7 +35,7 @@ def root():
     return {"message": "스팸 분류 AI 서버 작동 중"}
 
 # ✅ 벡터화 및 분류 요청 처리
-@app.post("/vectorize")
+@app.post("/analyze")
 async def vectorize(input: TextInput):
     cleaned_text = re.sub(r'\s+', ' ', input.text.strip())  # 줄바꿈 제거 및 공백 정리
     inputs = tokenizer(cleaned_text, return_tensors="pt", truncation=True, padding=True)

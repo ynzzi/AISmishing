@@ -61,6 +61,7 @@ def get_detections(user_id: str = Query(...)):
 @app.post("/report")
 def report_sms(user_id: str = Form(...), detection_id: int = Form(...)):
     print(f"📩 신고된 메시지\n- 유저: {user_id}")
+    print(f"신고 id\n- id: {detection_id}")
 
     report_id = None
     report_id = insert_report_history(

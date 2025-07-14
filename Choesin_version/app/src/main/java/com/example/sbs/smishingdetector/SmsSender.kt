@@ -27,7 +27,7 @@ object SmsSender {
             .build()
 
         val request = Request.Builder()
-            .url("http://192.168.0.247:8000/sms") // 🔁 DB 서버 주소
+            .url("http://172.30.1.32:8080/sms") // 🔁 DB 서버 주소
             .post(requestBody)
             .build()
 
@@ -68,7 +68,7 @@ object SmsSender {
                                     val intent = Intent(context, SmishingPopupActivity::class.java).apply {
                                         putExtra("sender", sender)
                                         putExtra("message", message)
-                                        putExtra("detection_id", detectionID)
+                                        putExtra("detectionID", detectionID)
                                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                                     }
                                     context.startActivity(intent)

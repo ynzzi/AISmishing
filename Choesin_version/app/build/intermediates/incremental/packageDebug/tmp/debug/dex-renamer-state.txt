@@ -1,15 +1,15 @@
-#Fri Jun 20 04:10:23 KST 2025
-base.0=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
-base.2=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.3=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.4=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.5=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.6=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.7=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.8=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.9=C\:\\Users\\user\\AndroidStudioProjects\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Sun Jul 13 15:52:49 KST 2025
+base.0=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.10=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+base.2=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.3=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+base.5=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
+base.6=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
+base.7=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.8=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.9=C\:\\Users\\Kimminsu\\Desktop\\swk_AI\\AISmishing\\Choesin_version\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=classes3.dex
