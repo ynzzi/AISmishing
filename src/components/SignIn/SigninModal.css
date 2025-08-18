@@ -1,0 +1,90 @@
+/* 모달 뒷배경 */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 배경 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 모달 컨텐츠 영역 */
+.modal-content {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    width: 800px;
+    height: 500px;
+    overflow: hidden; /* 모서리가 둥글게 잘 보이도록 */
+}
+
+/* 왼쪽 이미지 섹션 */
+.modal-image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 여기에 배경 이미지나 img 태그 스타일을 추가할 수 있습니다. */
+}
+.modal-image-section p {
+    color: #ccc;
+    font-size: 1.5rem;
+}
+
+
+/* 오른쪽 폼 섹션 */
+.modal-form-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-form-section h2 {
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.modal-login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4841AE;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.modal-login-button:hover {
+    background-color: #2a62bc;
+}

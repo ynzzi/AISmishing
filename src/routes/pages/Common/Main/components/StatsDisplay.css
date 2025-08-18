@@ -1,0 +1,29 @@
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+.stat-label {
+    color: #333;
+}
+
+.stat-value {
+    color: #007bff;
+    font-weight: bold;
+}
+
+h3 {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}

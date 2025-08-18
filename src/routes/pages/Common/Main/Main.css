@@ -1,0 +1,81 @@
+.dashboard-wrapper {
+    padding: 24px;
+    background-color: #fff;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 24px;
+}
+
+.dashboard-section {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.section-content {
+    display: flex;
+    flex-direction: row;
+    gap: 16px; 
+}
+
+.content-block {
+    background-color: #f9f9f9;
+    border: 1px solid #e9e9e9;
+    padding: 16px;
+    border-radius: 4px;
+}
+
+.stats-block {
+    flex: 1;
+    min-width: 280px;
+}
+
+.chart-block {
+    flex: 1.5;
+}
+
+.content-block {
+    margin-top: 0;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.log-section {
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.nav-button {
+    background-color: #4841AE;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s; 
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-button-container {
+    text-align: right;
+    margin-top: 32px;
+}

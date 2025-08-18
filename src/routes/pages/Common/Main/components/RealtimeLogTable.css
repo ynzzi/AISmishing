@@ -1,0 +1,49 @@
+.table-container {
+    overflow-x: auto; /* 내용이 길어지면 가로 스크롤 생성 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+thead th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.log-content {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+
+.risk-level {
+    padding: 4px 8px;
+    color: white;
+    border-radius: 4px;
+}
+
+.risk-level.high {
+    background-color: #dc3545;
+}
+
+.risk-level.medium {
+    background-color: #ffc107;
+}
+
+.risk-level.low {
+    background-color: #0ae83a;
+}

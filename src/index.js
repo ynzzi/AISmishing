@@ -1,14 +1,29 @@
+/**
+ * 24-09-13 23:00 ~ 00:23 (1h 23m)
+  * create layout
+  * header, nav, footer
+ * 24-09-14 15:30 ~ 17:30 (2h)
+  * create article
+  * main spot, program component
+ */
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import App from './App';
+
+import './index.css';
+
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <Router>
     <App />
-  </React.StrictMode>
+
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
