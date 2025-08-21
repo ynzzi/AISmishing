@@ -1,4 +1,4 @@
-package com.example.smishingdetector.ui
+package com.example.sbs.smishingdetector.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
@@ -36,28 +37,30 @@ fun ReportScreen(
     detectionViewModel: DetectionViewModel = viewModel(),
     reportViewModel: ReportViewModel = viewModel()
 ) {
-    // ✅ 데이터 자동 로딩 추가
+    val context = LocalContext.current
+
+    // 최초 로딩
     LaunchedEffect(Unit) {
-        detectionViewModel.loadDetections("user001")
-        reportViewModel.loadReportRows("user001")
+        detectionViewModel.loadDetections(context)
+        reportViewModel.loadReportRows(context)
     }
 
+    // 표 데이터
     val detectionRows = detectionViewModel.detections.map {
         listOf(it.received_at, "${it.sender}\n${it.message}")
     }
-
     val pagedDetections = detectionRows.chunked(3)
     val pagedReports = reportViewModel.reportRows.chunked(3)
 
-    val detectionPage = remember { mutableStateOf(0) }
-    val reportPage = remember { mutableStateOf(0) }
+    var detectionPage by remember { mutableStateOf(0) }
+    var reportPage by remember { mutableStateOf(0) }
 
     Scaffold(
         topBar = {
             TopAppBar(
                 title = { Text("신고내역 및 스미싱 목록", fontSize = 18.sp) },
                 navigationIcon = {
-                    IconButton(onClick = { navController.navigate("main") }) {
+                    IconButton(onClick = { navController.popBackStack() }) {
                         Icon(Icons.Default.ArrowBack, contentDescription = "뒤로가기")
                     }
                 }
@@ -74,32 +77,43 @@ fun ReportScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             LazyColumn(modifier = Modifier.fillMaxSize()) {
+                // 탐지내역
                 item { TableTitle("탐지내역") }
                 item { TableHeader(listOf("수신일", "탐지내역")) }
-                items(pagedDetections.getOrNull(detectionPage.value) ?: emptyList()) { row ->
-                    TableRow(row)
+
+                val detPageList = pagedDetections.getOrNull(detectionPage).orEmpty()
+                if (detPageList.isEmpty()) {
+                    item { EmptyRow("탐지내역이 없습니다.") }
+                } else {
+                    items(detPageList) { row -> TableRow(row) }
                 }
                 item {
                     PaginationControls(
-                        currentPage = detectionPage.value,
-                        totalPages = pagedDetections.size,
-                        onPrev = { if (detectionPage.value > 0) detectionPage.value-- },
-                        onNext = { if (detectionPage.value < pagedDetections.size - 1) detectionPage.value++ }
+                        currentPage = detectionPage,
+                        totalPages = maxOf(pagedDetections.size, 1),
+                        onPrev = { if (detectionPage > 0) detectionPage-- },
+                        onNext = { if (detectionPage < (pagedDetections.size - 1)) detectionPage++ }
                     )
                 }
 
                 item { Spacer(modifier = Modifier.height(24.dp)) }
+
+                // 신고내역
                 item { TableTitle("신고내역") }
                 item { TableHeader(listOf("신고일", "신고 내역")) }
-                items(pagedReports.getOrNull(reportPage.value) ?: emptyList()) { row ->
-                    TableRow(row)
+
+                val repPageList = pagedReports.getOrNull(reportPage).orEmpty()
+                if (repPageList.isEmpty()) {
+                    item { EmptyRow("신고내역이 없습니다.") }
+                } else {
+                    items(repPageList) { row -> TableRow(row) }
                 }
                 item {
                     PaginationControls(
-                        currentPage = reportPage.value,
-                        totalPages = pagedReports.size,
-                        onPrev = { if (reportPage.value > 0) reportPage.value-- },
-                        onNext = { if (reportPage.value < pagedReports.size - 1) reportPage.value++ }
+                        currentPage = reportPage,
+                        totalPages = maxOf(pagedReports.size, 1),
+                        onPrev = { if (reportPage > 0) reportPage-- },
+                        onNext = { if (reportPage < (pagedReports.size - 1)) reportPage++ }
                     )
                 }
             }
@@ -283,6 +297,17 @@ fun TableRow(values: List<String>) {
     Divider(thickness = 0.5.dp, color = Color(0xFFE0E0E0))
 }
 
+@Composable
+fun EmptyRow(message: String) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(12.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(message, fontSize = 13.sp, color = Color(0xFF888888))
+    }
+}
 
 @Composable
 fun PaginationControls(
@@ -298,16 +323,8 @@ fun PaginationControls(
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        Button(onClick = onPrev, enabled = currentPage > 0) {
-            Text("이전")
-        }
-        Text(
-            "${currentPage + 1} / $totalPages",
-            modifier = Modifier.padding(horizontal = 16.dp),
-            fontSize = 14.sp
-        )
-        Button(onClick = onNext, enabled = currentPage < totalPages - 1) {
-            Text("다음")
-        }
+        Button(onClick = onPrev, enabled = currentPage > 0) { Text("이전") }
+        Text("${currentPage + 1} / $totalPages", modifier = Modifier.padding(horizontal = 16.dp), fontSize = 14.sp)
+        Button(onClick = onNext, enabled = currentPage < totalPages - 1) { Text("다음") }
     }
 }

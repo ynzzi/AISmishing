@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.smishingdetector.app-mergeDebugResources-65:/values-h720dp-v13/values-h720dp-v13.xml",
+            "outputFile": "com.example.smishingdetector.app-mergeDebugResources-66:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\afd77036b07c42891bfbbf52a912652f\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "/Users/seong-yunji/.gradle/caches/8.11.1/transforms/afd77036b07c42891bfbbf52a912652f/transformed/appcompat-1.6.1/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

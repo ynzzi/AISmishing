@@ -1,3 +1,4 @@
+// app/src/main/java/com/example/smishingdetector/MainActivity.kt
 package com.example.smishingdetector
 
 import android.Manifest
@@ -13,7 +14,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.navigation.compose.*
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.sbs.smishingdetector.smsguard.TokenStorage
+import com.example.sbs.smishingdetector.ui.LoginScreen
+import com.example.sbs.smishingdetector.ui.ReportScreen
+import com.example.sbs.smishingdetector.ui.SignUpScreen
 import com.example.smishingdetector.ui.*
 import com.example.smishingdetector.ui.theme.SmishingDetectorTheme
 
@@ -33,10 +40,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
 
         checkPermissions()       // ① 권한 요청
-        requestDefaultSmsApp()   // ② 기본 메시지 앱 설정 유도(선택)
+        // 기본 SMS 앱 전환은 사용자 경험을 위해 PermissionScreen에서 눌러 유도하는 걸 권장
+        // requestDefaultSmsApp()
 
         setContent {
-            SmishingDetectorApp()  // ③ 기존 Compose UI 그대로
+            SmishingDetectorApp()  // ③ Compose UI
         }
     }
 
@@ -54,7 +62,7 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    /** 현재 앱이 기본 SMS/MMS 앱이 아니라면 설정 화면으로 이동 */
+    /** 현재 앱이 기본 SMS/MMS 앱이 아니라면 설정 화면으로 이동 (옵션) */
     private fun requestDefaultSmsApp() {
         if (Telephony.Sms.getDefaultSmsPackage(this) != packageName) {
             val intent = Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT).apply {
@@ -65,56 +73,48 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-
 @Composable
 fun SmishingDetectorApp() {
     val navController = rememberNavController()
     val context = LocalContext.current
     val prefs = context.getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
+
     val isPermissionShown = prefs.getBoolean("PermissionScreenShown", false)
     val isLoggedIn = prefs.getBoolean("isLoggedIn", false)
+    // ✅ 기기 토큰 보유 여부로 로그인 화면 스킵
+    val hasDeviceToken = !TokenStorage(context).getDeviceToken().isNullOrBlank()
 
+    // ✅ 시작 목적지 결정 규칙
     val startDestination = when {
-        !isLoggedIn        -> "welcome"
-        !isPermissionShown -> "permission"
-        else               -> "main"
+        hasDeviceToken && !isPermissionShown -> "permission" // 토큰 있음 → 권한 안내 먼저
+        hasDeviceToken -> "main"                             // 권한도 이미 봤으면 메인
+        isLoggedIn && !isPermissionShown -> "permission"     // (보조) 로그인 플래그로도 처리
+        isLoggedIn -> "main"
+        else -> "welcome"
     }
 
     SmishingDetectorTheme {
         NavHost(navController = navController, startDestination = startDestination) {
             // 🟡 웰컴 화면 (가입하기 / 로그인 선택)
-            composable("welcome") {
-                WelcomeScreen(navController)
-            }
+            composable("welcome") { WelcomeScreen(navController) }
 
-            // 🔵 로그인 화면
-            composable("login") {
-                LoginScreen(navController, prefs)
-            }
+            // 🔵 로그인 화면 (ID/PW → device_token 발급/저장)
+            composable("login") { LoginScreen(navController, prefs) }
 
             // 🟢 회원가입 화면
-            composable("signup") {
-                SignUpScreen(navController)
-            }
+            composable("signup") { SignUpScreen(navController) }
 
             // 🔒 권한 설정 안내 화면
-            composable("permission") {
-                PermissionScreen(navController, prefs)
-            }
+            composable("permission") { PermissionScreen(navController, prefs) }
 
             // 🔐 SMS 권한 요청 화면
-            composable("sms_permission") {
-                SmsPermissionScreen(navController)
-            }
+            composable("sms_permission") { SmsPermissionScreen(navController) }
 
             // 🏠 메인 대시보드 화면
-            composable("main") {
-                MainScreen(navController, prefs)
-            }
-            // 🧾 신고내역 및 스미싱 목록 화면 (🚨 새로 추가된 부분)
-            composable("report") {
-                ReportScreen(navController)
-            }
+            composable("main") { MainScreen(navController, prefs) }
+
+            // 🧾 신고내역 및 스미싱 목록 화면
+            composable("report") { ReportScreen(navController) }
         }
     }
 }

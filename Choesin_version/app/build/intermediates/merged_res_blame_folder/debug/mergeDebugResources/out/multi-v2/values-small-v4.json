@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.smishingdetector.app-mergeDebugResources-65:/values-small-v4/values-small-v4.xml",
+            "outputFile": "com.example.smishingdetector.app-mergeDebugResources-66:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kimminsu\\.gradle\\caches\\8.11.1\\transforms\\0a87f52ec8c30309e5924e0d629e461e\\transformed\\material-1.11.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "/Users/seong-yunji/.gradle/caches/8.11.1/transforms/0a87f52ec8c30309e5924e0d629e461e/transformed/material-1.11.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
