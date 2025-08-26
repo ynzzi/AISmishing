@@ -38,6 +38,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -49,6 +50,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("org.json:json:20240303")
     implementation("androidx.appcompat:appcompat:1.6.1")
 
     implementation(libs.androidx.core.ktx)
@@ -78,6 +80,7 @@ dependencies {
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     // XML 기반 Dialog 테마를 위한 Material Components (필수!)
     implementation("com.google.android.material:material:1.11.0")
+    implementation ("androidx.compose.material:material-icons-extended:1.6.8")
 
     implementation("com.google.accompanist:accompanist-swiperefresh:0.30.1")
 
@@ -86,5 +89,7 @@ dependencies {
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation ("androidx.activity:activity-compose:1.5.1")
     implementation ("androidx.compose.material3:material3:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+    implementation ("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14")
 
 }

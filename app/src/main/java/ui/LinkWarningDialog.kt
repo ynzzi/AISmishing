@@ -1,4 +1,4 @@
-package ui
+package com.example.sbs.smishingdetector.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
